@@ -1,8 +1,8 @@
-<%= session[:player_1] %> vs <%= session[:player_2]  %><br>
-<%= session[:player_2]  %>'s hitpoints: 100/100
+<%= $player1 %> vs <%= $player2  %><br>
+<%= $player2  %>'s hitpoints: 100/100
 
 <% if @attack %>
-<%= session[:player_2]%> took damage!
+<%= $player2 %> took damage!
 <% end %>
 
 <form action="/attack" method="post">
