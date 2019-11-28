@@ -1,8 +1,8 @@
-<%= $player1 %> vs <%= $player2  %><br>
-<%= $player2  %>'s hitpoints: 100/100
+<%= $player1.name %> vs <%= $player2.name  %><br>
+<%= $player2.name  %>'s hitpoints: <%= $player2.hit_points %>/<%= Player::DEFAULT_HITPOINTS %><br>
 
 <% if @attack %>
-<%= $player2 %> took damage!
+<%= $player2.name %> took damage!
 <% end %>
 
 <form action="/attack" method="post">
