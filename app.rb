@@ -1,6 +1,7 @@
 require "sinatra"
 
 class Battle < Sinatra::Base
+  attr_reader :attack
 
   enable :sessions
 
@@ -15,7 +16,13 @@ class Battle < Sinatra::Base
   end
 
   get "/play" do
+    @attack = session[:attack]
     erb(:battle)
+  end
+
+  post "/attack" do
+    session[:attack] = params["attack"]
+    redirect "/play"
   end
 
   # start the server if ruby file executed directly
