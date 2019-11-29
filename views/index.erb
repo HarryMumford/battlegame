@@ -1,8 +1,8 @@
-<h1>Testing infrastructure working!</h1>
-<%= @player_1 %> vs <%= @player_2 %>
+<h1>Welcome to the battle!</h1>
+<%= @player1 %> vs <%= @player2 %>
 
-<form action="/battle" method="post">
-  <input type="text" name="player_1" placeholder="Player 1">
-  <input type="text" name="player_2" placeholder="Player 2">
+<form action="/names" method="post">
+  <input type="text" name="player1" placeholder="Player 1">
+  <input type="text" name="player2" placeholder="Player 2">
   <input type="submit" value="Submit">
 </form>

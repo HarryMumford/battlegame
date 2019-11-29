@@ -1,7 +1,7 @@
 feature "homepage" do
-  scenario "it says Testing infrastructure working!" do
+  scenario "it says the title" do
     visit('/')
-    expect(page).to have_content("Testing infrastructure working!")
+    expect(page).to have_content("Welcome to the battle!")
   end
 
   scenario "it show players names on screen after they enter them" do

@@ -10,17 +10,17 @@ describe Player do
     end
   end
 
-  describe "#hit_points" do
+  describe "#hp" do
     context "at the start of the game" do
       it "returns the players' default hit points" do
-        expect(player.hit_points).to eq(Player::DEFAULT_HITPOINTS)
+        expect(player.hp).to eq(Player::DEFAULT_HP)
       end
     end
   end
 
-  describe "#reduce_hitpoints" do
+  describe "#reduce_hp" do
     it "reduces the players hitpoints by 10" do
-      expect(player.reduce_hitpoints).to eq(90)
+      expect(player.reduce_hp).to eq(90)
     end
   end
 end

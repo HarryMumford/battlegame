@@ -10,19 +10,22 @@ class Battle < Sinatra::Base
     erb(:index)
   end
 
-  post "/battle" do
-    $player1 = Player.new(params[:player_1])
-    $player2 = Player.new(params[:player_2])
-    redirect "/play"
-  end
-
   get "/play" do
-    erb(:battle)
+    @attack_message = session.delete(:attack_message)
+    erb(:play)
   end
 
   post "/attack" do
     session[:attack_message] = "Successful attack!"
-    Game.new.attack($player2)
+    @attack_message = session[:attack_message]
+    $game.attack($game.player2)
+    redirect "/play"
+  end
+
+  post "/names" do
+    @player1 = Player.new(params[:player1])
+    @player2 = Player.new(params[:player2])
+    $game = Game.new(@player1, @player2)
     redirect "/play"
   end
 

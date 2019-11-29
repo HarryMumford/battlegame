@@ -1,8 +1,0 @@
-<%= $player1.name %> vs <%= $player2.name  %><br>
-<%= $player2.name  %>'s hitpoints: <%= $player2.hit_points %>/<%= Player::DEFAULT_HITPOINTS %><br>
-
-<%= session[:attack_message] %>
-
-<form action="/attack" method="post">
-  <input type="submit" value="ATTACK!">
-</form>
