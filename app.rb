@@ -1,5 +1,6 @@
 require "sinatra"
 require_relative "lib/player"
+require_relative "lib/game"
 
 class Battle < Sinatra::Base
 
@@ -16,16 +17,14 @@ class Battle < Sinatra::Base
   end
 
   get "/play" do
-    @attack = session[:attack]
     erb(:battle)
   end
 
   post "/attack" do
-    session[:attack] = params["attack"]
-    $player2.reduce_hitpoints
+    session[:attack_message] = "Successful attack!"
+    Game.new.attack($player2)
     redirect "/play"
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
