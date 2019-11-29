@@ -5,7 +5,7 @@ require_relative "lib/game"
 class Battle < Sinatra::Base
 
   enable :sessions
-
+  
   get "/" do
     erb(:index)
   end
