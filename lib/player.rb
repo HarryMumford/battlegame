@@ -11,5 +11,4 @@ class Player
   def reduce_hitpoints
     @hit_points -= 10
   end
-
 end
